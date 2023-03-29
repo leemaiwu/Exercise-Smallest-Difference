@@ -17,3 +17,29 @@ function smallestDifference () {
 }
 
 console.log(smallestDifference())
+
+
+//// Jared's Solution ////
+
+function smallest(arr1, arr2) {
+    let smallestDiff = Infinity
+
+    for (let i = 0; i < arr1.length; i++) {
+        let currArrNum1 = arr1[i]
+
+        for (let k = 0; k < arr2.length; k++) {
+            let currArrNum2 = arr2[k]
+
+            let subTr = currArrNum1 - currArrNum2
+
+            let currDiff = Math.abs(subTr)
+
+            if (currDiff < smallestDiff) {
+                smallestDiff = currDiff
+            }
+        }
+    }
+    return smallestDiff
+}
+
+console.log(smallest([10, 20, 14, 16, 18], [30, 23, 54, 33, 96]))
